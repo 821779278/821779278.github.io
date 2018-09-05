@@ -5,7 +5,7 @@
 		<meta name="X-UA-Compatible" content="IE=edge"/>
 		<meta name="keywords" content="秘书学系"/>
 		<meta name="description" content="XX大学秘书学系"/>
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 		<title>威华挂车厂</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 
@@ -239,7 +239,7 @@
 		}
 		//创建一个Icon
 		function createIcon(json){
-			var icon = new BMap.Icon("https://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+			var icon = new BMap.Icon("", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
 			return icon;
 		}
 		
