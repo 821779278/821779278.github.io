@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="X-UA-Compatible" content="IE=edge"/>
+		<meta name="keywords" content="秘书学系"/>
+		<meta name="description" content="XX大学秘书学系"/>
+		<title>威华挂车厂</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+			html,body{margin:0;padding:0;}
+			.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+			.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	</head>
+	<body>
+		<!--header-->
+		<div class="top_wrap">
+			<!--top index-->
+			<div class="top">
+				<span class="welcome">国家工信部汽车《公告》企业</span>
+				<div class="corner">
+					<a onclick=SetHome(this,window.location) title="设为首页" href="javascript:void(0);">设为首页</a>
+					<span>|</span>
+					<a onclick=addFavorite(window.location,document.title) title="添加收藏" href="javascript:void(0);">加入收藏</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--logo and nav-->
+		<div class="header_wrap">
+			<div class="header">
+				<a href="index.html" class="logo"><img src="images/logo.jpg" /></a>
+				<div class="nav_list">
+						<ul id="nav" class="nav clearfix">
+							<li class="nLi" style="display: none;"></li>
+							<li class="nLi">
+								<h3><a href="index.html">首页</a></h3>
+							</li>
+							<li class="nLi">
+								<h3><a href="about1.html">公司简介</a></h3>						
+							</li>
+							<li class="nLi">
+								<h3><a href="student.html">产品中心</a></h3>							
+							</li>
+							<li class="nLi">
+								<h3><a href="notice.html">新闻资讯</a></h3>				
+							</li>
+							<li class="nLi">
+								<h3><a href="contact.html">联系我们</a></h3>						
+							</li>
+						</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--banner-->
+		<!--<div class="i_banner">
+			<img src="images/banner1.jpg" />
+		</div>-->
+		<!--content-->
+		<div class="i_content">
+			<div class="adr_wrap">
+				<div class="adr">
+					<span class="adr_link"><a href="index.html">首   页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;联系我们</span>
+				</div>
+			</div>
+			<div class="c_area">
+				<div class="left_list">
+					<div class="nav_title">联系我们</div>
+					
+					<div class="contact">
+						<a href="contact.html"><img src="images/tel.jpg" /></a>
+					</div>
+				</div>
+				<div class="right_content">
+					<div class="con_title">联系我们</div>
+					<div style="width:500px;height:300px;border:#ccc solid 1px;" id="dituContent"></div>
+					<div class="con_box">
+						<p><h2>梁山威华机械制造有限公司</h2></p>
+						<p><h2><font color="#FF0000">联系人:&nbsp;&nbsp;&nbsp;&nbsp;崔经理&nbsp;13792393668&nbsp;&nbsp;&nbsp;&nbsp;郭经理&nbsp;15053747096</font></h2></p>
+						<p><h2>地址：山东省梁山县拳铺工业园区</h2></p>
+						<p><h2>开户行：中国农业银行梁山拳铺分理处</h2></p>
+						<p><h2>账号：15491701040004946</h2></p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--footer-->
+		<div class="footer_wrap">
+			<div class="line"></div>
+			<div class="footer">
+				<div class="f_left">					
+					<div class="contact">
+						<p><h1>梁山威华机械制造有限公司</h1></p>
+						<p><h2>联系人:&nbsp;&nbsp;&nbsp;&nbsp;崔经理&nbsp;13792393668&nbsp;&nbsp;&nbsp;&nbsp;郭经理&nbsp;15053747096</h2></p>
+						<p><h2>地址：山东省梁山县拳铺工业园区</h2></p>
+					</div>
+				</div>
+				<div class="f_right">
+					<p><a href="contact.html" style="text-decoration: underline;">公司地图位置</a></p>
+					<p><a href=""></a></p>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+	</body>
+	<script type="text/javascript">
+		//创建和初始化地图函数：
+		function initMap(){
+			createMap();//创建地图
+			setMapEvent();//设置地图事件
+			addMapControl();//向地图添加控件
+			addMarker();//向地图中添加marker
+		}
+		
+		//创建地图函数：
+		function createMap(){
+			var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+			var point = new BMap.Point(116.129238,35.718249);//定义一个中心点坐标
+			map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+			window.map = map;//将map变量存储在全局
+		}
+		
+		//地图事件设置函数：
+		function setMapEvent(){
+			map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+			map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+			map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+			map.enableKeyboard();//启用键盘上下左右键移动地图
+		}
+		
+		//地图控件添加函数：
+		function addMapControl(){
+			//向地图中添加缩放控件
+		var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+		map.addControl(ctrl_nav);
+			//向地图中添加缩略图控件
+		var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+		map.addControl(ctrl_ove);
+			//向地图中添加比例尺控件
+		var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+		map.addControl(ctrl_sca);
+		}
+		
+		//标注点数组
+		var markerArr = [{title:"梁山威华机械制造有限公司",content:"联系人：<br/>崔经理&nbsp;13792393668<br/>郭经理&nbsp;15053747096",point:"116.129211|35.718293",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+			 ];
+		//创建marker
+		function addMarker(){
+			for(var i=0;i<markerArr.length;i++){
+				var json = markerArr[i];
+				var p0 = json.point.split("|")[0];
+				var p1 = json.point.split("|")[1];
+				var point = new BMap.Point(p0,p1);
+				var iconImg = createIcon(json.icon);
+				var marker = new BMap.Marker(point,{icon:iconImg});
+				var iw = createInfoWindow(i);
+				var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+				marker.setLabel(label);
+				map.addOverlay(marker);
+				label.setStyle({
+							borderColor:"#808080",
+							color:"#333",
+							cursor:"pointer"
+				});
+				
+				(function(){
+					var index = i;
+					var _iw = createInfoWindow(i);
+					var _marker = marker;
+					_marker.addEventListener("click",function(){
+						this.openInfoWindow(_iw);
+					});
+					_iw.addEventListener("open",function(){
+						_marker.getLabel().hide();
+					})
+					_iw.addEventListener("close",function(){
+						_marker.getLabel().show();
+					})
+					label.addEventListener("click",function(){
+						_marker.openInfoWindow(_iw);
+					})
+					if(!!json.isOpen){
+						label.hide();
+						_marker.openInfoWindow(_iw);
+					}
+				})()
+			}
+		}
+		//创建InfoWindow
+		function createInfoWindow(i){
+			var json = markerArr[i];
+			var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+			return iw;
+		}
+		//创建一个Icon
+		function createIcon(json){
+			var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+			return icon;
+		}
+		
+		initMap();//创建和初始化地图
+	</script>
+</html>

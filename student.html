@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="X-UA-Compatible" content="IE=edge"/>
+		<meta name="keywords" content="秘书学系"/>
+		<meta name="description" content="XX大学秘书学系"/>
+		<title>威华挂车厂</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<!--header-->
+		<div class="top_wrap">
+			<!--top index-->
+			<div class="top">
+				<span class="welcome">国家工信部汽车《公告》企业</span>
+				<div class="corner">
+					<a onclick=SetHome(this,window.location) title="设为首页" href="javascript:void(0);">设为首页</a>
+					<span>|</span>
+					<a onclick=addFavorite(window.location,document.title) title="添加收藏" href="javascript:void(0);">加入收藏</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--logo and nav-->
+		<div class="header_wrap">
+			<div class="header">
+				<a href="index.html" class="logo"><img src="images/logo.jpg" /></a>
+				<div class="nav_list">
+						<ul id="nav" class="nav clearfix">
+							<li class="nLi" style="display: none;"></li>
+							<li class="nLi">
+								<h3><a href="index.html">首页</a></h3>
+							</li>
+							<li class="nLi">
+								<h3><a href="about1.html">公司简介</a></h3>						
+							</li>
+							<li class="nLi">
+								<h3><a href="student.html">产品中心</a></h3>							
+							</li>
+							<li class="nLi">
+								<h3><a href="notice.html">新闻资讯</a></h3>				
+							</li>
+							<li class="nLi">
+								<h3><a href="contact.html">联系我们</a></h3>						
+							</li>
+						</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--banner-->
+		<!--<div class="i_banner">
+			<img src="images/banner1.jpg" />
+		</div>-->
+		<!--content-->
+		<div class="i_content">
+			<div class="adr_wrap">
+				<div class="adr">
+					<span class="adr_link"><a href="index.html">首   页</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;产品中心</span>
+				</div>
+			</div>
+			<div class="c_area">
+				<div class="left_list">
+					<div class="nav_title">产品中心</div>
+					<div class="sidemenu">
+						<ul>
+							<li>
+								<h3>产品示例</h3>
+								
+							</li>
+							
+						</ul>
+					</div>
+					<div class="contact">
+						<a href="contact.html"><img src="images/tel.jpg" /></a>
+					</div>
+				</div>
+				<div class="right_content">
+					<div class="con_title">实景图片</div>
+					<div class="con_box">
+						<ul class="img-list">
+							<li>
+								<a href="stDetail.html"><img src="images/3510.jpg" /><b>仓栅式半挂车系列</b></a>
+							</li>
+							<li>
+								<a href="stDetail2.html"><img src="images/37.jpg" /><b>集装箱运输半挂车系列</b></a>
+							</li>
+							<li>
+								<a href="stDetail3.html"><img src="images/3542.jpg" /><b>后翻自卸半挂车系列</b></a>
+							</li>
+							<li>
+								<a href="stDetail4.html"><img src="images/353.jpg" /><b>平板自卸半挂车系列</b></a>
+							</li>
+							<li>
+								<a href="stDetail5.html"><img src="images/359.jpg" /><b>低平板运输半挂车系列</b></a>
+							</li>
+							<li>
+								<a href="stDetail6.html"><img src="images/36.jpg" /><b>骨架集装箱半挂车系列</b></a>
+							</li>
+							<li>
+								<a href="stDetail7.html"><img src="images/34.jpg" /><b>钩机板半挂车系列</b></a>
+							</li>
+							<li>
+								<a href="stDetail8.html"><img src="images/40.jpg" /><b>翼开启式运输半挂车系列</b></a>
+							</li>
+										
+						</ul>
+						<div class="clear"></div>
+						<!--分页-->
+						<div class="record">	                        
+	                        <span class="word"><a href="student.html">1</a></span>
+	                        <span class="word"><a href="student2.html">2</a></span>
+	                        <span class="sum">共2页</span>
+	                    </div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--footer-->
+		<div class="footer_wrap">
+			<div class="line"></div>
+			<div class="footer">
+				<div class="f_left">					
+					<div class="contact">
+						<p><h1>梁山威华机械制造有限公司</h1></p>
+						<p><h2>联系人:&nbsp;&nbsp;&nbsp;&nbsp;崔经理&nbsp;13792393668&nbsp;&nbsp;&nbsp;&nbsp;郭经理&nbsp;15053747096</h2></p>
+						<p><h2>地址：山东省梁山县拳铺工业园区</h2></p>
+					</div>
+				</div>
+				<div class="f_right">
+					<p><a href="contact.html" style="text-decoration: underline;">公司地图位置</a></p>
+					<p><a href=""></a></p>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript">
+			$(".sidemenu>ul>li h3").click(function(){
+				if($(this).siblings("ul").css("display")=="none"){
+					$(this).siblings("ul").css("display","block");
+					$(this).addClass("on");
+				}else{
+					$(this).siblings("ul").css("display","none");
+					$(this).removeClass("on");
+				}
+			});
+		</script>
+	</body>
+</html>
